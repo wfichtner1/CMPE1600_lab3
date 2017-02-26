@@ -200,6 +200,10 @@
             // 
             this.UI_DiameterColumn.Text = "Diameter";
             // 
+            // DrawTimer
+            // 
+            this.DrawTimer.Tick += new System.EventHandler(this.DrawTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

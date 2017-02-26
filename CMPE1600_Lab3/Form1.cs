@@ -42,9 +42,15 @@ namespace CMPE1600_Lab3
         {
             DrawTimer.Enabled = true;
 
+
         }
 
         private void UI_OpenFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DrawTimer_Tick(object sender, EventArgs e)
         {
 
         }
