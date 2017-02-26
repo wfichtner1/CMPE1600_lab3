@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UI_OpenFile = new System.Windows.Forms.Button();
             this.UI_SaveFile = new System.Windows.Forms.Button();
             this.UI_DrawButton = new System.Windows.Forms.Button();
@@ -37,14 +38,15 @@
             this.UI_DiameterUpDown = new System.Windows.Forms.NumericUpDown();
             this.UI_DiamLabel = new System.Windows.Forms.Label();
             this.UI_ColorBox = new System.Windows.Forms.GroupBox();
-            this.UI_RedRadio = new System.Windows.Forms.RadioButton();
-            this.UI_GreenRadio = new System.Windows.Forms.RadioButton();
             this.UI_BlueRadio = new System.Windows.Forms.RadioButton();
+            this.UI_GreenRadio = new System.Windows.Forms.RadioButton();
+            this.UI_RedRadio = new System.Windows.Forms.RadioButton();
             this.listView1 = new System.Windows.Forms.ListView();
             this.UI_ColorColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UI_XcoorColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UI_YcoorColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UI_DiameterColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DrawTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UI_DiameterUpDown)).BeginInit();
             this.UI_ColorBox.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +59,7 @@
             this.UI_OpenFile.TabIndex = 0;
             this.UI_OpenFile.Text = "Open File";
             this.UI_OpenFile.UseVisualStyleBackColor = true;
+            this.UI_OpenFile.Click += new System.EventHandler(this.UI_OpenFile_Click);
             // 
             // UI_SaveFile
             // 
@@ -75,6 +78,7 @@
             this.UI_DrawButton.TabIndex = 2;
             this.UI_DrawButton.Text = "Draw";
             this.UI_DrawButton.UseVisualStyleBackColor = true;
+            this.UI_DrawButton.Click += new System.EventHandler(this.UI_DrawButton_Click);
             // 
             // UI_PlayBack
             // 
@@ -131,16 +135,16 @@
             this.UI_ColorBox.TabStop = false;
             this.UI_ColorBox.Text = "Color";
             // 
-            // UI_RedRadio
+            // UI_BlueRadio
             // 
-            this.UI_RedRadio.AutoSize = true;
-            this.UI_RedRadio.Location = new System.Drawing.Point(7, 20);
-            this.UI_RedRadio.Name = "UI_RedRadio";
-            this.UI_RedRadio.Size = new System.Drawing.Size(45, 17);
-            this.UI_RedRadio.TabIndex = 0;
-            this.UI_RedRadio.TabStop = true;
-            this.UI_RedRadio.Text = "Red";
-            this.UI_RedRadio.UseVisualStyleBackColor = true;
+            this.UI_BlueRadio.AutoSize = true;
+            this.UI_BlueRadio.Location = new System.Drawing.Point(7, 68);
+            this.UI_BlueRadio.Name = "UI_BlueRadio";
+            this.UI_BlueRadio.Size = new System.Drawing.Size(46, 17);
+            this.UI_BlueRadio.TabIndex = 2;
+            this.UI_BlueRadio.TabStop = true;
+            this.UI_BlueRadio.Text = "Blue";
+            this.UI_BlueRadio.UseVisualStyleBackColor = true;
             // 
             // UI_GreenRadio
             // 
@@ -153,16 +157,16 @@
             this.UI_GreenRadio.Text = "Green";
             this.UI_GreenRadio.UseVisualStyleBackColor = true;
             // 
-            // UI_BlueRadio
+            // UI_RedRadio
             // 
-            this.UI_BlueRadio.AutoSize = true;
-            this.UI_BlueRadio.Location = new System.Drawing.Point(7, 68);
-            this.UI_BlueRadio.Name = "UI_BlueRadio";
-            this.UI_BlueRadio.Size = new System.Drawing.Size(46, 17);
-            this.UI_BlueRadio.TabIndex = 2;
-            this.UI_BlueRadio.TabStop = true;
-            this.UI_BlueRadio.Text = "Blue";
-            this.UI_BlueRadio.UseVisualStyleBackColor = true;
+            this.UI_RedRadio.AutoSize = true;
+            this.UI_RedRadio.Location = new System.Drawing.Point(7, 20);
+            this.UI_RedRadio.Name = "UI_RedRadio";
+            this.UI_RedRadio.Size = new System.Drawing.Size(45, 17);
+            this.UI_RedRadio.TabIndex = 0;
+            this.UI_RedRadio.TabStop = true;
+            this.UI_RedRadio.Text = "Red";
+            this.UI_RedRadio.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
@@ -240,6 +244,7 @@
         private System.Windows.Forms.ColumnHeader UI_XcoorColumn;
         private System.Windows.Forms.ColumnHeader UI_YcoorColumn;
         private System.Windows.Forms.ColumnHeader UI_DiameterColumn;
+        private System.Windows.Forms.Timer DrawTimer;
     }
 }
 
