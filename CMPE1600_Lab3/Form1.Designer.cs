@@ -117,6 +117,11 @@
             this.UI_DiameterUpDown.Name = "UI_DiameterUpDown";
             this.UI_DiameterUpDown.Size = new System.Drawing.Size(85, 20);
             this.UI_DiameterUpDown.TabIndex = 6;
+            this.UI_DiameterUpDown.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
             // 
             // UI_DiamLabel
             // 

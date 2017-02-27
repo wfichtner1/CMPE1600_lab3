@@ -15,7 +15,15 @@ using GDIDrawer;
 
 namespace CMPE1600_Lab3
 {
-    
+    //Program:      CMPE1600_Lab3.sln
+    //Description:  A program in which the user can draw circles
+    //              to their specification, and save and load the
+    //              circles they have made.
+    //Lab:          3
+    //Date:         February 25, 2017
+    //Author:       William Fichtner
+    //Class         CMPE 1600
+    //Instructor:   JD Silver
 
     public partial class Form1 : Form
     {
@@ -35,10 +43,12 @@ namespace CMPE1600_Lab3
             }
         }
         //Global Variables
-        List<Circle> circList = new List<Circle>();        
-        CDrawer canvas = new CDrawer();
-        Point ptClick;
-        Color circColor = Color.Red;
+        List<Circle> circList = new List<Circle>();     //List of circles 
+        CDrawer canvas = new CDrawer();                 //GDI canvas
+        Point ptClick;                                  //mouse click saves to this
+        Color circColor = Color.Red;                    //Initializes circle color as red
+
+        //Form initializer
         public Form1()
         {
             InitializeComponent();           
@@ -78,9 +88,7 @@ namespace CMPE1600_Lab3
             }
         }
 
-       
-
-
+        //These events toggle the circle color
         private void UI_RedRadio_CheckedChanged(object sender, EventArgs e)
         {
             circColor = Color.Red;
@@ -95,18 +103,22 @@ namespace CMPE1600_Lab3
         {
             circColor = Color.Blue;
         }
+        // End of circle color toggles
 
+        //Clears the list view and list of all items
         private void UI_EraseListButton_Click(object sender, EventArgs e)
         {
             circList.Clear();
             listView1.Items.Clear();
         }
 
+        //Only clears the canvas, does not clear lists
         private void UI_EraseScreen_Click(object sender, EventArgs e)
         {
             canvas.Clear();
         }
 
+        //Saves circle list to binary file
         private void UI_SaveFile_Click(object sender, EventArgs e)
         {
             try
@@ -123,6 +135,9 @@ namespace CMPE1600_Lab3
                 MessageBox.Show("Lab 3", "Could not save file", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
+        //Loads the serialized circle list, writes it to
+        //the list view, and draws all the circles contained
         private void UI_OpenFile_Click(object sender, EventArgs e)
         {
             try
@@ -142,11 +157,17 @@ namespace CMPE1600_Lab3
             ListPop();
             PlayBack();
         }
+
+        //Will draw back all saved circles
         private void UI_PlayBack_Click(object sender, EventArgs e)
         {
             PlayBack();
         }
 
+        //Methods
+
+        //Used to populate list view with all list items
+        //without repeating any
         private void ListPop()
         {
             foreach (Circle n in circList)
@@ -157,6 +178,9 @@ namespace CMPE1600_Lab3
                 addCirc.SubItems.Add(n._diameter.ToString());
             }
         }
+
+        //Goes through the list and draws circle based on
+        //structure contents
         private void PlayBack()
         {
             foreach (Circle n in circList)
