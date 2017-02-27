@@ -69,6 +69,7 @@
             this.UI_SaveFile.TabIndex = 1;
             this.UI_SaveFile.Text = "Save File";
             this.UI_SaveFile.UseVisualStyleBackColor = true;
+            this.UI_SaveFile.Click += new System.EventHandler(this.UI_SaveFile_Click);
             // 
             // UI_DrawButton
             // 
@@ -88,6 +89,7 @@
             this.UI_PlayBack.TabIndex = 3;
             this.UI_PlayBack.Text = "Play Back";
             this.UI_PlayBack.UseVisualStyleBackColor = true;
+            this.UI_PlayBack.Click += new System.EventHandler(this.UI_PlayBack_Click);
             // 
             // UI_EraseScreen
             // 
@@ -97,6 +99,7 @@
             this.UI_EraseScreen.TabIndex = 4;
             this.UI_EraseScreen.Text = "Erase Screen";
             this.UI_EraseScreen.UseVisualStyleBackColor = true;
+            this.UI_EraseScreen.Click += new System.EventHandler(this.UI_EraseScreen_Click);
             // 
             // UI_EraseListButton
             // 
@@ -106,6 +109,7 @@
             this.UI_EraseListButton.TabIndex = 5;
             this.UI_EraseListButton.Text = "Erase List";
             this.UI_EraseListButton.UseVisualStyleBackColor = true;
+            this.UI_EraseListButton.Click += new System.EventHandler(this.UI_EraseListButton_Click);
             // 
             // UI_DiameterUpDown
             // 
@@ -145,6 +149,7 @@
             this.UI_BlueRadio.TabStop = true;
             this.UI_BlueRadio.Text = "Blue";
             this.UI_BlueRadio.UseVisualStyleBackColor = true;
+            this.UI_BlueRadio.CheckedChanged += new System.EventHandler(this.UI_BlueRadio_CheckedChanged);
             // 
             // UI_GreenRadio
             // 
@@ -156,10 +161,12 @@
             this.UI_GreenRadio.TabStop = true;
             this.UI_GreenRadio.Text = "Green";
             this.UI_GreenRadio.UseVisualStyleBackColor = true;
+            this.UI_GreenRadio.CheckedChanged += new System.EventHandler(this.UI_GreenRadio_CheckedChanged);
             // 
             // UI_RedRadio
             // 
             this.UI_RedRadio.AutoSize = true;
+            this.UI_RedRadio.Checked = true;
             this.UI_RedRadio.Location = new System.Drawing.Point(7, 20);
             this.UI_RedRadio.Name = "UI_RedRadio";
             this.UI_RedRadio.Size = new System.Drawing.Size(45, 17);
@@ -167,6 +174,7 @@
             this.UI_RedRadio.TabStop = true;
             this.UI_RedRadio.Text = "Red";
             this.UI_RedRadio.UseVisualStyleBackColor = true;
+            this.UI_RedRadio.CheckedChanged += new System.EventHandler(this.UI_RedRadio_CheckedChanged);
             // 
             // listView1
             // 
@@ -177,7 +185,7 @@
             this.UI_DiameterColumn});
             this.listView1.Location = new System.Drawing.Point(159, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(199, 282);
+            this.listView1.Size = new System.Drawing.Size(264, 282);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -185,6 +193,7 @@
             // UI_ColorColumn
             // 
             this.UI_ColorColumn.Text = "Color";
+            this.UI_ColorColumn.Width = 115;
             // 
             // UI_XcoorColumn
             // 
@@ -208,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 306);
+            this.ClientSize = new System.Drawing.Size(435, 306);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.UI_ColorBox);
             this.Controls.Add(this.UI_DiamLabel);
